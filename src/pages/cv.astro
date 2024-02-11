@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <!-- <div class="mb-5">
+    <div class="text-3xl w-full font-bold mb-10">CURRICULUM VITAE</div>
+  </div> -->
+
+  <!-- <div class="mb-10 text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div> -->
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Bachelor of Technology in Information Technology"
+      subtitle="Shri Govindram Seksaria Institute Of Technology And Science, Indore, India [Nov 2020 - May 2024]"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Research Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Research Intern (Remote)"
+      subtitle="University of Groningen, Groningen, Netherlands [May 2023 - Present]"
+    >
+      <!-- <ul>
+        <li> -->
+          Working on multimodal sarcasm detection with a team of professors and
+          Ph.D. students, utilizing deep attention-based architectures.
+        <!-- </li>
+      </ul> -->
+    </TimeLineElement>
+    <TimeLineElement
+      title="Research Collaborator"
+      subtitle="Indian Institute of Technology Indore, Indore, India [Jul 2022 - Oct 2023]"
+    >
+      <!-- <ul>
+        <li> -->
+          Collaborated on a 9-month project developing a novel framework for
+          semantic comprehension of memes, and a 6-month project building a
+          query-response system for agricultural decision-making.
+        <!-- </li>
+      </ul> -->
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>Python</li>
+    <li>C/C++</li>
+    <li>TensorFlow</li>
+    <li>Keras</li>
+    <li>PyTorch</li>
+    <li>OpenCV</li>
+    <li>Matplotlib</li>
+    <li>SQL</li>
+    <li>HTML/CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Achievements</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10">
+    <li>
+      Selected for the ME-UYR 2023 program, undertaking a 6-month project funded
+      with $3900 by IEEE SPS, with the prospect of presenting a publication at
+      ICASSP 2025.
+    </li>
+  </ul>
+</BaseLayout>
