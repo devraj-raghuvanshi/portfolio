@@ -20,6 +20,10 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
+      <TimeLineElement
+      title="Master of Science in Data Science"
+      subtitle="Brown University, Providence, RI, USA [Aug 2024 - May 2026]"
+    />
     <TimeLineElement
       title="Bachelor of Technology in Information Technology"
       subtitle="Shri Govindram Seksaria Institute Of Technology And Science, Indore, India [Nov 2020 - May 2024]"
@@ -27,61 +31,81 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Research Experience</div>
+  <div class="text-3xl w-full font-bold">Research Experience</div>
   </div>
 
-  <div class="time-line-container mb-10">
+  <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Research Intern (Remote)"
-      subtitle="University of Groningen, Groningen, Netherlands [May 2023 - Present]"
+      title="Research Assistant"
+      subtitle="Serre Lab, Brown University, Providence, RI, USA [Oct 2024 - Present]"
     >
-      <!-- <ul>
-        <li> -->
-          Working on multimodal sarcasm detection with a team of professors and
-          Ph.D. students, utilizing deep attention-based architectures.
-        <!-- </li>
-      </ul> -->
+      <ul>
+        <li>- Building a foundational time series model of pupillometry to predict cognitive load and performance in humans, aiming to generalize beyond single-task models.</li>
+        <li>- Exploring the use of autoregressive models and transformer-based architectures to capture dynamic patterns in pupil response data, across diverse tasks (e.g., visuomotor rotation, working memory).</li>
+      </ul>
     </TimeLineElement>
     <TimeLineElement
-      title="Research Collaborator"
-      subtitle="Indian Institute of Technology Indore, Indore, India [Jul 2022 - Oct 2023]"
+      title="Research Intern"
+      subtitle="University of Groningen, Groningen, Netherlands [May 2023 - Jul 2024]"
     >
-      <!-- <ul>
-        <li> -->
-          Collaborated on a 9-month project developing a novel framework for
-          semantic comprehension of memes, and a 6-month project building a
-          query-response system for agricultural decision-making.
-        <!-- </li>
-      </ul> -->
+      <ul>
+        <li>- Developed a multimodal sarcasm detection framework using video clips from TV shows, employing transfer learning.</li>
+        <li>- Designed a cross-modal contrastive attention mechanism and applied Graph Attention Networks to capture emotional incongruities and intra-modal relationships, boosting F1-score by 3.12%.</li>
+        <li>- Implemented advanced data augmentation using GPT-4 for text modality, Fast Speech 2 for audio modality, and lip synchronization methods for video modality, which improved model generalization, leading to a 1.41% increase in F1-score.</li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Research Intern"
+      subtitle="Indian Institute of Technology Indore, Indore, India [Aug 2022 – Oct 2023]"
+    >
+      <ul>
+        <li>- Built a multilingual hope speech detection framework for low-resource languages using a hierarchical attention-based Capsule Neural Network, achieving F1-score improvements of up to 6.58%.</li>
+        <li>- Developed a cross-modal representation learning strategy in Graph Neural Networks for semantic comprehension of multimodal content, improving F1-score in tasks like sentiment analysis by 3.14% and offensiveness detection by 2.06%.</li>
+      </ul>
     </TimeLineElement>
   </div>
+
+
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>Python</li>
-    <li>C/C++</li>
-    <li>TensorFlow</li>
-    <li>Keras</li>
-    <li>PyTorch</li>
-    <li>OpenCV</li>
-    <li>Matplotlib</li>
-    <li>SQL</li>
-    <li>HTML/CSS</li>
-    <li>JavaScript</li>
-  </ul>
+<ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+  <li>Python</li>
+  <li>R</li>
+  <li>C/C++</li>
+  <li>NumPy</li>
+  <li>Pandas</li>
+  <li>Scikit-learn</li>
+  <li>TensorFlow</li>
+  <li>PyTorch</li>
+  <li>Seaborn</li>
+  <li>Matplotlib</li>
+  <li>Hugging Face</li>
+  <li>Tableau</li>
+  <li>Power BI</li>
+  <li>MySQL</li>
+  <li>MongoDB</li>
+  <li>Spark</li>
+  <li>Hadoop</li>
+  <li>Kafka</li>
+  <li>Redshift</li>
+  <li>Git</li>
+</ul>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Achievements</div>
-  </div>
 
-  <ul class="list-disc mx-6 mb-10">
-    <li>
-      Selected for the ME-UYR 2023 program, undertaking a 6-month project funded
-      with $3900 by IEEE SPS, with the prospect of presenting a publication at
-      ICASSP 2025.
-    </li>
-  </ul>
+
+<div class="mb-5">
+  <div class="text-3xl w-full font-bold">Achievements</div>
+</div>
+
+<ul class="list-disc mx-6 mb-10">
+  <li>
+    Selected as one of the 20 students worldwide for the “Mentoring Experience for Underrepresented Young Researchers 
+    (ME-UYR) 2023 Program” of the IEEE Signal Processing Society, funded with $4000, to visit the University of Groningen, 
+    Netherlands, and attend ICASSP 2025.
+  </li>
+</ul>
 </BaseLayout>
+

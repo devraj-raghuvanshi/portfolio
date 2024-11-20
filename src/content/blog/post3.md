@@ -1,21 +1,18 @@
 ---
-title: "MM-ORIENT: Multimodal-Multitask Framework with Cross-modal Relation and Hierarchical Interactive Attention"
-description: "A Semantic Comprehension Framework for Multimodal Content"
-startDate: "Feb 2023"
-endDate: "Oct 2023"
-heroImage: "/mm-orient.webp"
+title: "Multilingual Hope Speech Detection for Low-Resource Languages"
+description: "IIT Indore"
+startDate: "May 2023"
+endDate: "Present"
+heroImage: "/hope-speech.webp"
 ---
 
-The project, titled "Multimodal-Multitask framework with crOss-modal Relation and hIErarchical iNteractive aTtention (MM-ORIENT)," addresses the challenge of acquiring efficient multimodal representations for various tasks while mitigating the influence of noise inherent in monomodal features. Traditional multimodal learning methods often employ complex fusion techniques to merge features from different modalities, potentially overlooking discriminative information within monomodal features and propagating noise in the resulting multimodal representations.
+The proposed project, titled "HopeCap," addresses the escalating issue of offensive content on social media platforms, stemming from the exponential growth in user-generated content. Despite the initial creative intent of social media, the prevalence of harmful material poses a significant challenge. In response to this, the project introduces a multilingual hope speech detection framework designed to identify and promote positive and inspiring content amidst the vast volume of online data.
 
-To overcome these challenges, we propose a novel framework that acquires multimodal representations in a cross-modal manner without requiring explicit interaction between different modality representations at the latent stage. The approach utilizes cross-modal relation graphs to reconstruct monomodal features, wherein nodes represent features of one modality and edges are established based on features of another modality. This method effectively reduces noise propagation in multimodal features while comprehending high-order relationships between modalities.
+HopeCap utilizes a comprehensive approach, integrating a unique custom capsule network architecture with transformer encoders. This method incorporates various linguistic analysis components, including word-level attention, Bidirectional LSTM (BiLSTM), and a Capsule layer. The framework is adaptable to multiple languages and extends its scope by incorporating translated and transliterated data, enabling cross-language analysis.
 
-Additionally, a Hierarchical Interactive Monomodal Attention (HIMA) mechanism is introduced to enhance multitasking capabilities. HIMA operates in two stages, generating region-based and word-level attention vectors on individual modalities before creating a unified representation for the multimodal content. This attention mechanism helps extract discriminative information from individual modalities before late-fusing them to generate a joint representation.
+The project emphasizes the significance of linguistic diversity in fostering positive communication across different cultural contexts. By fusing outputs from the original, translated, and transliterated data branches, HopeCap provides a robust framework for detecting hope speech, contributing valuable insights to the field.
 
-Moreover, the framework leverages generative AI-based large language models (LLMs) for text augmentation, enhancing the performance of the framework. By incorporating task-specific text features in the final representation, our model effectively comprehends multimodal content for multiple tasks, including sentiment analysis, humor recognition, sarcasm detection, offensive content identification, and motivation detection.
+The study acknowledges the challenges in the linguistic landscape, particularly in languages like Tamil and Malayalam, emphasizing the need for effective training methodologies and comprehensive datasets. The scarcity of resources for Indic languages poses a significant hurdle, requiring collaborative efforts to build linguistic resources. Preserving contextual richness in numerical representations, accounting for spelling variations, and addressing code-mixing challenges are highlighted as essential considerations in the development of accurate hope speech detection models.
 
-In conclusion, our framework offers a promising solution to the challenges of multimodal representation learning by effectively reducing noise propagation and comprehending high-order relationships between modalities. The framework's performance surpasses existing approaches, highlighting its potential for various applications requiring multimodal comprehension.
-
-
-
+In conclusion, the project introduces HopeCap as a promising framework for detecting hope speech across multiple languages, surpassing existing methodologies in Tamil, Malayalam, and Kannada datasets. The proposed approach incorporates various linguistic analysis components, demonstrating superior performance and potential applications in social media monitoring and sentiment analysis.
 

@@ -1,6 +1,6 @@
 ---
-title: "Attention-Aware Deep Architecture for Multi-Modal Sarcasm Detection"
-description: "Detecting Sarcasm in Video Clips with Advanced Deep Learning Techniques"
+title: "Multimodal Sarcasm Detection"
+description: "University of Groningen"
 startDate: "Dec 2023"
 endDate: "Feb 2023"
 heroImage: "/multimodal.webp"
