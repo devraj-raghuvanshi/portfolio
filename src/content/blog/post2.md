@@ -1,20 +1,21 @@
 ---
 title: "Multimodal Sarcasm Detection"
 description: "University of Groningen"
-startDate: "Dec 2023"
-endDate: "Feb 2023"
+startDate: "May 2023"
+endDate: "July 2024"
 heroImage: "/multimodal.webp"
 ---
 
-In the project titled "Attention-Aware Deep Architecture for Multi-Modal Sarcasm Detection," the focus is on developing a robust model for detecting sarcasm in multimodal data.
+In this project, a novel multimodal approach is proposed to enhance the accuracy of sarcasm detection by addressing key challenges posed by emotional incongruities and modality-specific relationships. The core innovation lies in the integration of Graph Attention Networks (GATs) to capture intra-modal dependencies and a Cross-modal Contrastive Attention Mechanism to identify emotional incongruities between modalities (text, audio, video). Sarcasm often hinges on the contrast between expressed and implied emotions, which may not always be explicitly conveyed within a single modality. Thus, the framework models these incongruities through pair-wise comparisons of emotional features across different modalities to accurately detect sarcasm.
 
-To extract features from the different modalities, I've utilized various transformer-based pre-trained models.
+To address the problem of data scarcity, the proposed method employs advanced data augmentation techniques: it uses a lip synchronization strategy (Wav2Lip) to adjust the speaker's lip movements to match the augmented audio, which is generated using fine-tuned Fast Speech 2. The audio is derived from augmented text samples, which are generated through few-shot prompting with GPT-4o. 
 
-I've implemented early and late fusion strategies, obtaining some baseline results. Moving forward, the next steps in the project involve the design and implementation of a deep learning architecture with attention-based mechanisms. Attention mechanisms allow the model to focus on relevant information within each modality, enhancing the model's ability to detect sarcasm effectively. By incorporating attention mechanisms, the model can learn to prioritize important features while ignoring irrelevant or noisy information.
+Features are extracted using pre-trained and fine-tuned (for emotion recognition) models: BERT for text, Wav2Vec2 for audio, and Vision Transformers (ViT) for video, to extract the raw and emotion feautures, respectively. Additionally, the framework utilizes supervised contrastive learning to create discriminative embeddings, pushing the model to better differentiate between sarcastic and non-sarcastic instances.
 
-Additionally, the project is exploring the incorporation of Graph Neural Networks (GNNs) into the architecture. GNNs have shown promising results in various tasks involving structured data, such as social network analysis and recommendation systems. By leveraging GNNs, the model can potentially capture complex relationships and dependencies within and between different modalities, further improving the performance of sarcasm detection in multimodal data.
+The method constructs graphs for each modality (text, audio, video) with nodes representing d-dimensional feature vectors. Highly similar nodes are connected, emphasizing strong intra-modal relationships. Then, these graphs are processed through Graph Attention Networks (GAT) to learn dependencies within each modality, producing modality-specific embeddings that are fused through collaborative gating.
 
-The project aims to develop a state-of-the-art deep learning architecture with attention-based mechanisms and potentially GNNs for multi-modal sarcasm detection, thereby advancing the capabilities of sarcasm detection models in understanding and interpreting multimodal content effectively.
+To capture emotional incongruities between modalities, the contrastive attention mechanism normalizes and aligns emotion features from each modality into a common embedding space. Then, it generates opponent attention weights to highlight discrepancies, which are used to create contrastive matrices that capture modality-specific emotional differences.
 
+Finally, the embeddings from the previous steps are combined and refined using supervised contrastive learning. This encourages the model to differentiate between sarcastic and non-sarcastic instances, with a final classifier trained to predict the emotion based on the learned features.
 
-
+The proposed framework demonstrates a significant performance improvement over existing methods, achieving a macro F1 score of 74.96% on the MUStARD++ dataset, outperforming prior state-of-the-art by 1.6%.
