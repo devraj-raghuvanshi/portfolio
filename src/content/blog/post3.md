@@ -6,6 +6,12 @@ endDate: "October 2023"
 heroImage: "/hope-speech.webp"
 ---
 
+<div class="bg-gray-100 p-2 rounded-md inline-block">
+  <a href="https://www.sciencedirect.com/science/article/abs/pii/S095741742403152X" class="text-black-500 underline hover:text-blue-700" target="_blank">
+    [Publication]</a>
+  </a>
+</div>
+
 This project addresses the escalating issue of offensive content on social media platforms, stemming from the exponential growth in user-generated content. Despite the initial creative intent of social media, the prevalence of harmful material poses a significant challenge. In response to this, the project introduces a multilingual hope speech detection framework designed to identify and promote positive and inspiring content amidst the vast volume of online data.
 
 HopeCap utilizes a comprehensive approach, integrating a unique custom capsule network architecture with transformer encoders. This method incorporates various linguistic analysis components, including word-level attention, Bidirectional LSTM (BiLSTM), and a Capsule layer. The framework is adaptable to multiple languages and extends its scope by incorporating translated and transliterated data, enabling cross-language analysis.
