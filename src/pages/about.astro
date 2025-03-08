@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="About · Devraj Raghuvanshi" sideBarActiveItemID="about">
+  <div class="w-full px-8 py-12">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8">Beyond Academia</h1>
+      
+      <!-- Interests Section -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-semibold mb-6">What Keeps Me Moving?</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-base-100 p-6 rounded-xl shadow-sm border border-base-200">
+            <h3 class="flex items-center gap-2 text-xl font-medium mb-3">
+              <span class="text-2xl">🚴‍♂️</span> Cycling
+            </h3>
+            <p class="text-lg">
+              Cycling feels freeing to me, whether it’s a chill city ride or exploring new paths.
+            </p>
+          </div>
+
+          <div class="bg-base-100 p-6 rounded-xl shadow-sm border border-base-200">
+            <h3 class="flex items-center gap-2 text-xl font-medium mb-3">
+              <span class="text-2xl">🏸</span> Badminton
+            </h3>
+            <p class="text-lg">
+              Fast reflexes, quick thinking, and a epic rallies - badminton’s a perfect mix of exercise and fun.
+            </p>
+          </div>
+
+          <div class="bg-base-100 p-6 rounded-xl shadow-sm border border-base-200">
+            <h3 class="flex items-center gap-2 text-xl font-medium mb-3">
+              <span class="text-2xl">💪</span> Gym
+            </h3>
+            <p class="text-lg">
+              The gym’s my spot for pushing myself, both physically and mentally.
+            </p>
+          </div>
+
+          <div class="bg-base-100 p-6 rounded-xl shadow-sm border border-base-200">
+            <h3 class="flex items-center gap-2 text-xl font-medium mb-3">
+              <span class="text-2xl">🎲</span> Speed Cubing
+            </h3>
+            <p class="text-lg">
+              While I haven't been actively speed cubing lately, I'm eager to pick up again.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Section -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-6">Travel 🌎</h2>
+        <div class="bg-base-100 p-8 rounded-xl shadow-sm border border-base-200">
+          <p class="text-lg mb-6">
+            I derive immense pleasure in exploring the world - every new place and person has a unique story to tell, and I'm always eager to listen. I aim to see as much of the world as possible and connect with people from all walks of life.
+          </p>
+
+          <h3 class="text-xl font-medium mb-4">Places I've Called Home & Visited</h3>
+          <div class="space-y-2 text-lg">
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li>Belgium 🇧🇪</li>
+              <li>France 🇫🇷</li>
+              <li>India 🇮🇳</li>
+              <li>Mauritius 🇲🇺</li>
+              <li>Netherlands 🇳🇱</li>
+              <li>Thailand 🇹🇭</li>
+              <li>United Arab Emirates 🇦🇪</li>
+              <li>United States 🇺🇸</li>
+            </ul>
+          </div>
+
+          <div class="mt-8 text-lg">
+            <p class="italic">
+              "Travel far enough, you meet yourself." - David Mitchell
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .prose {
+    max-width: 100%;
+  }
+  .prose img {
+    margin: 0 auto;
+  }
+</style> 

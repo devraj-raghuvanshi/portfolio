@@ -1,6 +1,6 @@
 ---
 title: "Semantic Comprehension of Multimodal Content"
-description: "IIT Indore"
+description: "Indian Institute of Technology Indore"
 startDate: "Feb 2023"
 endDate: "Oct 2023"
 heroImage: "/mm-orient.webp"
@@ -8,7 +8,7 @@ heroImage: "/mm-orient.webp"
 
 <div class="bg-gray-100 p-2 rounded-md inline-block">
     <a href="https://github.com/devraj-raghuvanshi/MM-ORIENT" class="text-black-500 underline hover:text-blue-700" target="_blank">
-    [GitHub]
+    GitHub
   </a>
 </div>
 

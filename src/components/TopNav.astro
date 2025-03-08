@@ -1,0 +1,32 @@
+---
+const { activeItemID } = Astro.props;
+const activeClass = "bg-base-200"; // Subtle background for active item
+---
+
+<nav class="sticky top-0 z-50 bg-base-100 border-b border-base-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/" class="text-lg font-semibold">
+          Devraj Raghuvanshi
+        </a>
+      </div>
+      
+      <!-- Navigation Items -->
+      <div class="flex items-center space-x-4">
+        <a href="/" class={`px-3 py-2 rounded-md text-sm font-medium hover:bg-base-200 transition-colors ${activeItemID === "home" ? activeClass : ""}`}>
+          Home
+        </a>
+        <a href="/blog" class={`px-3 py-2 rounded-md text-sm font-medium hover:bg-base-200 transition-colors ${activeItemID === "blog" ? activeClass : ""}`}>
+          Projects
+        </a>
+        <a href="/projects" class={`px-3 py-2 rounded-md text-sm font-medium hover:bg-base-200 transition-colors ${activeItemID === "projects" ? activeClass : ""}`}>
+          Publications
+        </a>
+        <a href="/about" class={`px-3 py-2 rounded-md text-sm font-medium hover:bg-base-200 transition-colors ${activeItemID === "about" ? activeClass : ""}`}>
+          About
+        </a>
+      </div>
+    </div>
+  </div>
+</nav> 

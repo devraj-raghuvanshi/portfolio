@@ -1,6 +1,6 @@
 ---
 title: "Multilingual Hope Speech Detection for Low-Resource Languages"
-description: "IIT Indore"
+description: "Indian Institute of Technology Indore"
 startDate: "July 2023"
 endDate: "October 2023"
 heroImage: "/hope-speech.webp"
@@ -8,7 +8,7 @@ heroImage: "/hope-speech.webp"
 
 <div class="bg-gray-100 p-2 rounded-md inline-block">
   <a href="https://www.sciencedirect.com/science/article/abs/pii/S095741742403152X" class="text-black-500 underline hover:text-blue-700" target="_blank">
-    [Publication]</a>
+    Publication
   </a>
 </div>
 

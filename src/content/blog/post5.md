@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning-based Query-Response System for Farmers"
-description: "IIT Indore"
+description: "Indian Institute of Technology Indore"
 startDate: "July 2022"
 endDate: "Jan 2023"
 heroImage: "/kisanqrs.webp"
@@ -8,8 +8,8 @@ heroImage: "/kisanqrs.webp"
 
 <div class="bg-gray-100 p-2 rounded-md inline-block">
   <a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169923005689" class="text-black-500 underline hover:text-blue-700" target="_blank">
-    [Publication]</a> | <a href="https://github.com/devraj-raghuvanshi/KisanQRS" class="text-black-500 underline hover:text-blue-700" target="_blank">
-    [GitHub]
+    Publication</a> <a href="https://github.com/devraj-raghuvanshi/KisanQRS" class="text-black-500 underline hover:text-blue-700" target="_blank">
+    GitHub
   </a>
 </div>
 

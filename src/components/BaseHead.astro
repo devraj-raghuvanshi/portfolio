@@ -19,6 +19,21 @@ const { title, description, image = '/social_img.webp', ogType = 'website' } = A
 <link rel="icon" href="/favicon1.ico" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Theme initialization to prevent flash -->
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  document.documentElement.setAttribute("data-theme", theme);
+</script>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />

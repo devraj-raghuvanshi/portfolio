@@ -3,85 +3,141 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug"
+import type { Page } from 'astro';
+import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
-  // posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  posts.sort((a, b) => {
+    const dateA = new Date(a.data.startDate).getTime();
+    const dateB = new Date(b.data.startDate).getTime();
+    return dateB - dateA;
+  });
   return paginate(posts, { pageSize: 10 });
+}
+
+interface Props {
+  page: Page<CollectionEntry<"blog">>;
 }
 
 const { page } = Astro.props;
 ---
 
 <BaseLayout title="Projects · Devraj Raghuvanshi" sideBarActiveItemID="blog">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Projects</div>
-  </div>
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold mb-3">Projects</h1>
+    </div>
 
-  {
-    page.data.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
+    {
+      page.data.length === 0 ? (
+        <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
+          <p class="font-bold">No projects to display</p>
+          <p>Check back later for updates on my latest research projects.</p>
+        </div>
+      ) : (
+        <div class="grid gap-4">
+          {page.data.map((post) => (
+            <div class="project-card bg-base-100 rounded-lg shadow-sm border border-base-200 overflow-hidden hover:shadow-md transition-all">
+              <div class="grid md:grid-cols-[200px_1fr] gap-4">
+                {post.data.heroImage && (
+                  <div class="h-48 md:h-full relative overflow-hidden">
+                    <img
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div class="p-4 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="badge badge-sm">{post.data.description}</span>
+                      {post.data.badge && (
+                        <span class="badge badge-sm badge-outline">{post.data.badge}</span>
+                      )}
+                    </div>
+                    <h2 class="text-lg font-semibold mb-1">{post.data.title}</h2>
+                    <div class="text-sm text-base-content/70">
+                      {post.data.startDate} - {post.data.endDate}
+                    </div>
+                  </div>
+                  <a 
+                    href={"/blog/" + createSlug(post.data.title, post.slug)}
+                    class="inline-flex items-center text-primary mt-2 text-sm font-medium hover:text-primary-focus"
+                  >
+                    Learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    {(page.url.prev || page.url.next) && (
+      <div class="flex justify-between mt-8">
+        {page.url.prev ? (
+          <a href={page.url.prev} class="btn btn-sm btn-ghost gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Newer Projects
+          </a>
+        ) : (
+          <div />
+        )}
+        {page.url.next ? (
+          <a href={page.url.next} class="btn btn-sm btn-ghost gap-2">
+            Older Projects
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        ) : (
+          <div />
+        )}
       </div>
-    ) : (
-      <ul>
-        {page.data.map((post) => (
-          <>
-            <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.slug)}
-              target="_self"
-              badge={post.data.badge}
-              tags={post.data.tags}
-            />
-            <div class="divider my-0" />
-          </>
-        ))}
-      </ul>
-    )
-  }
-
-  <div class="flex justify-between">
-    {
-      page.url.prev ? (
-        <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
-          {" "}
-          <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-          </svg>{" "}
-          Recent posts
-        </a>
-      ) : (
-        <div />
-      )
-    }
-    {
-      page.url.next ? (
-        <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-          Older Posts{" "}
-          <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            {" "}
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
-        </a>
-      ) : (
-        <div />
-      )
-    }
+    )}
   </div>
 </BaseLayout>
+
+<style>
+  .project-card {
+    transition: all 0.2s ease-in-out;
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
+</style>
