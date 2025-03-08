@@ -26,7 +26,7 @@ const { page } = Astro.props;
 <BaseLayout title="Projects · Devraj Raghuvanshi" sideBarActiveItemID="blog">
   <div class="max-w-3xl mx-auto">
     <div class="mb-6">
-      <h1>Projects</h1>
+      <h1 class="text-3xl font-bold mb-3">Projects</h1>
     </div>
 
     {
@@ -38,7 +38,7 @@ const { page } = Astro.props;
       ) : (
         <div class="grid gap-4">
           {page.data.map((post) => (
-            <div class="project-card bg-base-100 rounded-xl shadow-sm border border-base-200 overflow-hidden hover:shadow-md transition-all">
+            <div class="project-card bg-base-100 rounded-lg shadow-sm border border-base-200 overflow-hidden hover:shadow-md transition-all">
               <div class="grid md:grid-cols-[200px_1fr] gap-4">
                 {post.data.heroImage && (
                   <div class="h-48 md:h-full relative overflow-hidden">
@@ -49,22 +49,22 @@ const { page } = Astro.props;
                     />
                   </div>
                 )}
-                <div class="p-6 flex flex-col justify-between">
+                <div class="p-4 flex flex-col justify-between">
                   <div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2 mb-2">
                       <span class="badge badge-sm">{post.data.description}</span>
                       {post.data.badge && (
                         <span class="badge badge-sm badge-outline">{post.data.badge}</span>
                       )}
                     </div>
-                    <h3>{post.data.title}</h3>
-                    <div class="text-base-content/80">
+                    <h2 class="text-lg font-semibold mb-1">{post.data.title}</h2>
+                    <div class="text-sm text-base-content/70">
                       {post.data.startDate} - {post.data.endDate}
                     </div>
                   </div>
                   <a 
                     href={"/blog/" + createSlug(post.data.title, post.slug)}
-                    class="standard-link inline-flex items-center mt-4"
+                    class="inline-flex items-center text-primary mt-2 text-sm font-medium hover:text-primary-focus"
                   >
                     Learn more
                     <svg
@@ -91,10 +91,10 @@ const { page } = Astro.props;
     {(page.url.prev || page.url.next) && (
       <div class="flex justify-between mt-8">
         {page.url.prev ? (
-          <a href={page.url.prev} class="standard-link inline-flex items-center">
+          <a href={page.url.prev} class="btn btn-sm btn-ghost gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 mr-1"
+              class="h-4 w-4"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -110,11 +110,11 @@ const { page } = Astro.props;
           <div />
         )}
         {page.url.next ? (
-          <a href={page.url.next} class="standard-link inline-flex items-center">
+          <a href={page.url.next} class="btn btn-sm btn-ghost gap-2">
             Older Projects
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-1"
+              class="h-4 w-4"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
