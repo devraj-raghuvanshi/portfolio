@@ -35,3 +35,33 @@ const {
     </div>
   </body>
 </html>
+
+<style is:global>
+  /* Standard text sizes */
+  .text-standard {
+    @apply text-lg leading-relaxed;
+  }
+  
+  /* Heading sizes */
+  h1, .h1 {
+    @apply text-4xl font-bold mb-6;
+  }
+  
+  h2, .h2 {
+    @apply text-2xl font-semibold mb-4;
+  }
+  
+  h3, .h3 {
+    @apply text-xl font-medium mb-3;
+  }
+
+  /* Paragraph spacing */
+  p {
+    @apply mb-4 text-lg leading-relaxed;
+  }
+
+  /* Link styles */
+  a.standard-link {
+    @apply text-blue-500 hover:text-blue-600 transition-colors;
+  }
+</style>
