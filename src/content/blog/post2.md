@@ -6,6 +6,12 @@ endDate: "July 2024"
 heroImage: "/multimodal.webp"
 ---
 
+<div class="bg-gray-100 p-2 rounded-md inline-block">
+  <a href="https://ieeexplore.ieee.org/abstract/document/10887864" class="text-black-500 underline hover:text-blue-700" target="_blank">
+    Publication
+  </a>
+</div>
+
 In this project, a novel multimodal approach is proposed to enhance the accuracy of sarcasm detection by addressing key challenges posed by emotional incongruities and modality-specific relationships. The core innovation lies in the integration of Graph Attention Networks (GATs) to capture intra-modal dependencies and a Cross-modal Contrastive Attention Mechanism to identify emotional incongruities between modalities (text, audio, video). Sarcasm often hinges on the contrast between expressed and implied emotions, which may not always be explicitly conveyed within a single modality. Thus, the framework models these incongruities through pair-wise comparisons of emotional features across different modalities to accurately detect sarcasm.
 
 To address the problem of data scarcity, the proposed method employs advanced data augmentation techniques: it uses a lip synchronization strategy (Wav2Lip) to adjust the speaker's lip movements to match the augmented audio, which is generated using fine-tuned Fast Speech 2. The audio is derived from augmented text samples, which are generated through few-shot prompting with GPT-4o. 
